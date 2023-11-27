@@ -1,0 +1,1083 @@
+@import url('https://fonts.google.com/specimen/Lato');
+
+body {
+    font-family: 'Lato';
+    background-color: black;
+    z-index: -1000;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+.cont1080 {
+    position: absolute;
+    width: 1080px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+
+/*SECCION 1*/
+
+
+.imgNavFijo {
+    position: fixed;
+    display: none;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+}
+
+.logoChico {
+    display: none;
+    z-index: 1000;
+    top: 20px;
+    left: 43%;
+    position: fixed;
+}
+
+.btn-comprar {
+    position: fixed;
+    top: 20px;
+    right: 200px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-comprar:hover {
+    transform: scale(0.9);
+}
+
+.menu {
+    position: fixed;
+    top: 20px;
+    height: 26px;
+    width: 34px;
+    left: 200px;
+    z-index: 1000;
+}
+
+.linea-menu {
+    height: 4px;
+    width: 100%;
+    background-color: #FFE901;
+    border-radius: 111px;
+    border: solid 4px #2981FF;
+    box-shadow: 4px 5px 0px 0px #02187E;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.open {
+    position: fixed;
+    z-index: 1000;
+    top: 20px;
+    height: 26px;
+    width: 34px;
+    left: 200px;
+}
+
+.open .linea-menu:nth-child(1) {
+    animation: rotate1 0.5s forwards;
+}
+
+.open .linea-menu:nth-child(2) {
+    animation: rotate2 0.5s forwards;
+}
+
+.open .linea-menu:nth-child(3) {
+    animation: rotate3 0.5s forwards;
+}
+
+@keyframes rotate1 {
+    100% {
+        transform: translateY(8px) rotate(50deg);
+        box-shadow: 0px 0px 0px 0px #02187E;
+    }
+}
+
+@keyframes rotate2 {
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes rotate3 {
+    100% {
+        transform: translateY(-8px) rotate(-45deg);
+        margin-top: -7px;
+        box-shadow: 0px 0px 0px 0px #02187E;
+    }
+}
+
+.menu .linea-menu:nth-child(1) {
+    animation: rotateInverse1 0.5s forwards;
+}
+
+.menu .linea-menu:nth-child(2) {
+    animation: rotateInverse2 0.5s forwards;
+}
+
+.menu .linea-menu:nth-child(3) {
+    animation: rotateInverse3 0.5s forwards;
+}
+
+.menu.cruz .linea-menu:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 11px;
+    box-shadow: 0px 4px 0px 0px #02187E;
+}
+
+.menu.cruz .linea-menu:nth-child(2) {
+    opacity: 0;
+}
+
+.menu.cruz .linea-menu:nth-child(3) {
+    transform: rotate(-50deg);
+    position: relative;
+    top: -14px;
+    margin-left: -3px;
+    box-shadow: -2px 4px 0px 0px #02187E;
+}
+
+@keyframes rotateInverse1 {
+    0% {
+        transform: translateY(8px) rotate(50deg);
+        box-shadow: 0px 0px 0px 0px #02187E;
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+        box-shadow: 4px 5px 0px 0px #02187E;
+    }
+}
+
+@keyframes rotateInverse2 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes rotateInverse3 {
+    0% {
+        transform: translateY(-8px) rotate(-45deg);
+        margin-top: -7px;
+        box-shadow: 0px 0px 0px 0px #02187E;
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+        margin-top: 0px;
+        box-shadow: 4px 5px 0px 0px #02187E;
+    }
+}
+
+.itemsMenu {
+    position: fixed;
+    top: 75px;
+    left: 190px;
+    z-index: 1000;
+}
+
+.itemsMenu div {
+    opacity: 0;
+    padding-bottom: 3px;
+}
+
+@keyframes itemMenuCostado {
+    0% {
+        opacity: 1;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.itemsMenu.show .item1 {
+    animation: itemMenuCostado 0.5s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.itemsMenu.show .item2 {
+    animation: itemMenuCostado 0.5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+.itemsMenu.show .item3 {
+    animation: itemMenuCostado 0.5s;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.itemsMenu.show div {
+    opacity: 0;
+}
+
+.logo {
+    z-index: -1;
+    position: absolute;
+    display: flex;
+    left: 20%;
+    top: 91px;
+    animation: rotacionLogo 0.8s ease-out alternate;
+    animation-delay: 5s;
+}
+
+@keyframes rotacionLogo {
+    0% {
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+
+    25% {
+        opacity: 1;
+        transform: rotate(10deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        opacity: 1;
+        transform: rotate(5deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
+
+.personaje1 {
+    position: absolute;
+    top: 360px;
+    left: 15px;
+    z-index: -1;
+    animation: entradaPersonajes 3s;
+    animation-delay: 5.2s;
+}
+
+.personaje2 {
+    position: absolute;
+    top: 150px;
+    left: -638px;
+    z-index: -1;
+    animation: entradaPersonajes 2s;
+    animation-delay: 5.2s;
+}
+
+@keyframes entradaPersonajes {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.personaje3 {
+    position: absolute;
+    top: 335px;
+    left: 650px;
+    z-index: -1;
+    display: flex;
+    animation: entradaPersonajes 5s;
+    animation-delay: 5.2s;
+}
+
+.personaje3Chico {
+    position: absolute;
+    top: 335px;
+    left: 650px;
+    z-index: -1;
+    display: none;
+
+}
+
+.img-cielo1 {
+    position: absolute;
+    top: 0;
+    z-index: -6;
+    width: 100%;
+}
+
+.img-cielo2 {
+    position: absolute;
+    top: 123px;
+    z-index: -10;
+    width: 100%;
+}
+
+.edificio1 {
+    position: absolute;
+    top: 144px;
+    z-index: -4;
+    left: 0;
+}
+
+.edificio2 {
+    position: absolute;
+    top: 570px;
+    left: 385px;
+    width: 52%;
+    z-index: -4;
+}
+
+.edificio3 {
+    position: absolute;
+    top: 128px;
+    right: 0;
+    margin: 0;
+    z-index: -4;
+}
+
+.telaAraña {
+    position: absolute;
+    top: 275px;
+    left: -200px;
+    z-index: 1;
+    width: 66.7%;
+    transform: rotate(5deg);
+}
+
+.telaArañaSpiderNegro {
+    position: absolute;
+    top: 420px;
+    right: 0px;
+    z-index: 2;
+    width: 20%;
+}
+
+/*SECCION 2*/
+.fondoVioleta {
+    position: absolute;
+    top: 775px;
+    width: 100%;
+    z-index: -3;
+}
+
+.rectSeccion2 {
+    position: absolute;
+    top: 1297px;
+    z-index: -2;
+}
+
+.conoceSpider {
+    position: absolute;
+    bottom: 5px;
+    width: 646px;
+    height: 114px;
+    top: 990px;
+    z-index: -2;
+}
+
+.conoceSpider h1 {
+    font-size: 60px;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    line-height: 1;
+}
+
+.conoceASpider {
+    margin-bottom: 0px;
+    letter-spacing: 0.5px;
+}
+
+.descripConoceSpider {
+    position: absolute;
+    width: 586px;
+    height: 154px;
+    top: 1130px;
+    z-index: -2;
+}
+
+.descripConoceSpider p {
+    font-size: 20px;
+    color: white;
+    font-weight: 320;
+    margin-top: 0;
+    letter-spacing: 0.2px;
+}
+
+.duende {
+    position: absolute;
+    top: 900px;
+    left: 620px;
+    z-index: -2;
+}
+
+/*SECCION 3*/
+.fondoBlanco {
+    position: absolute;
+    top: 1480px;
+    width: 100%;
+    z-index: -3;
+}
+
+.descripcionPersonajes {
+    position: absolute;
+    top: 1840px;
+    display: flex;
+    flex-direction: row;
+    z-index: -2;
+}
+
+.descripcionPersonajes div {
+    width: 310px;
+    height: 218px;
+    font-weight: 300;
+    padding-right: 45px;
+}
+
+.descripcionPersonajes p {
+    color: black;
+    font-size: 20px;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.descripcionPersonajes img {
+    padding-right: 40px;
+}
+
+.historiaPersonajes {
+    font-size: 20px;
+    color: white;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.historiaSpider {
+    animation: fadeIn 3s;
+    animation-delay: 2.5s;
+}
+
+.historiaSpiderNegro {
+    animation: fadeIn 5s;
+    animation-delay: 1.5s;
+}
+
+.historiaGhost {
+    animation: fadeIn 7s;
+    animation-delay: .5s;
+}
+
+/*SECCION 4*/
+.fondoGhost {
+    position: absolute;
+    top: 2500px;
+    width: 100%;
+    z-index: -3;
+}
+
+.autosAndando {
+    position: absolute;
+    z-index: -2;
+    display: flex;
+    flex-direction: column;
+}
+
+.autoVelocidad {
+    position: absolute;
+    top: 2340px;
+    transform: rotate(0.5deg);
+    transition: transform 0.5s;
+}
+
+.autoVelocidad:hover {
+    transform: rotate3d(1, 1, 1, 45deg);
+}
+
+.autoMovim {
+    position: absolute;
+    top: 2470px;
+    transform: rotate(3deg);
+    z-index: 1;
+    transition: transform 0.5s;
+}
+
+.autoMovim:hover {
+    transform: rotate3d(1, 1, 1, -45deg);
+}
+
+.autoQuieto {
+    position: absolute;
+    top: 2675px;
+    transform: rotate(-1deg);
+    z-index: 1;
+    transition: transform 0.5s;
+}
+
+.autoQuieto:hover {
+    transform: rotate3d(1, 1, 1, 45deg);
+}
+
+/*SECCION 5*/
+.vengadoresAcompañando {
+    position: absolute;
+    top: 3240px;
+    width: 667px;
+    height: 171px;
+    z-index: -3;
+}
+
+.vengadoresAcompañando h1 {
+    color: white;
+    width: 667px;
+    height: 171px;
+    font-size: 60px;
+    font-weight: 500;
+    height: 100%;
+}
+
+.seccion5cielo {
+    position: absolute;
+    top: 3510px;
+
+    z-index: -4;
+}
+
+.seccion5plantitas {
+    z-index: -4;
+}
+
+.seccion5piedra {
+    z-index: -2;
+}
+
+.seccion5plantitas,
+.seccion5piedra {
+    position: absolute;
+    top: 3510px;
+}
+
+.hulk {
+    position: absolute;
+    top: 3610px;
+    left: 670px;
+    z-index: -3;
+}
+
+.MsMarvel {
+    position: absolute;
+    top: 3415px;
+    left: 20px;
+    z-index: -3;
+}
+
+.blackPanter {
+    position: absolute;
+    top: 3255px;
+    left: 440px;
+    z-index: -3;
+}
+
+/*SECCION 6*/
+.fondoBlancoS6 {
+    position: absolute;
+    top: 3883px;
+    z-index: -6;
+    width: 100%;
+    height: 2194px;
+}
+
+.masAmigos6 {
+    position: absolute;
+    top: 4125px;
+    font-weight: 600;
+    font-size: 60px;
+    z-index: -2;
+}
+
+.seccion6 {
+    top: 4220px;
+    height: 1650px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.columnaSeccion6 {
+    width: 100%;
+    height: 1650px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.columnasImg {
+    width: 552px;
+    height: 1650px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+.columnasImg2 {
+    width: 100%;
+    height: 350px;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 35%;
+}
+
+.imgSeccion6 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 1s ease-in;
+}
+
+.show-img {
+    z-index: 1;
+    opacity: 1;
+}
+
+.columnasTexto {
+    position: relative;
+    left: 601px;
+    width: 467px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    box-sizing: border-box;
+}
+
+.seccion6Texto {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /*define la separación entre  los elementos uno debajo del otro.*/
+    opacity: 0;
+    transition: all 0.2s ease-in;
+}
+
+.seccion6Texto h1 {
+    height: 76px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 94.5%;
+}
+
+.seccion6Texto p {
+    line-height: 94.5%;
+    height: 171px;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.show-txt {
+    opacity: 1;
+}
+
+/*SECCION 7*/
+.unGranPoder {
+    position: absolute;
+    top: 6112px;
+    width: 816px;
+    height: 144px;
+    z-index: -2;
+}
+
+.unGranPoder h1 {
+    margin-top: 0px;
+    font-size: 60px;
+    color: white;
+    font-weight: 320;
+}
+
+.btn-comparar7 {
+    position: absolute;
+    top: 6295px;
+    left: 4px;
+    z-index: -2;
+}
+.btn-comparar7:hover {
+    transform: scale(0.9);
+}
+
+/*SECCION 8*/
+.fondoBlanco8,
+.fondoAzulOscuro,
+.fondoCeleste,
+.fondoRosa {
+    position: absolute;
+    top: 6312px;
+    width: 100%;
+    z-index: -5;
+}
+
+.fondoBlanco {
+    display: flex;
+}
+
+.fondoAzulOscuro {
+    display: none;
+}
+
+.fondoCeleste {
+    display: none;
+}
+
+.fondoRosa {
+    display: none;
+}
+
+.ghost-Spider8 {
+    position: absolute;
+    top: 6500px;
+    left: 90px;
+    z-index: -2;
+}
+
+.spiderMan8 {
+    position: absolute;
+    top: 6500px;
+    left: 290px;
+    z-index: -2;
+}
+
+.spiderNegro8 {
+    position: absolute;
+    top: 6500px;
+    left: 670px;
+    z-index: -2;
+}
+
+/*SECCION 9*/
+
+.fondoDeLosDeptos {
+    position: absolute;
+    top: 7032px;
+    width: 100%;
+    z-index: -4;
+}
+
+.fondoDepartamentos {
+    position: absolute;
+    top: 7708px;
+    width: 100%;
+    z-index: -3;
+}
+
+.tituloSecc9 {
+    position: absolute;
+    top: 7132px;
+    width: 816px;
+    height: 171px;
+    left: 100px;
+    z-index: -3;
+}
+
+.loUltimoDeSpider {
+    font-size: 60px;
+    margin-top: 0;
+    font-weight: 600;
+    height: 232px;
+    line-height: 94.5%;
+    font-style: normal;
+    text-align: center;
+}
+
+.btn-Suscribirse {
+    position: absolute;
+    top: 7355px;
+    left: 100px;
+    z-index: -2;
+}
+
+.textoPInsc {
+    position: absolute;
+    top: 7495px;
+    width: 578px;
+    height: 95px;
+    font-weight: 400;
+    left: 165px;
+    font-style: normal;
+    line-height: 94.5%;
+    font-size: 20px;
+    z-index: -2;
+}
+
+.subrayado {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.codigoExtens {
+    position: absolute;
+    top: 7600px;
+    left: 165px;
+    z-index: -3;
+}
+
+.ghost-spider9 {
+    position: absolute;
+    top: 8296px;
+    left: 430px;
+    z-index: -3;
+}
+
+.spiderMan9 {
+    position: absolute;
+    top: 8180px;
+    left: 970px;
+    z-index: -3;
+}
+
+/*SECCION 10*/
+footer {
+    position: absolute;
+    height: 678px;
+    width: 100%;
+    z-index: -2;
+    top: 8550px;
+}
+
+.fondoLogP {
+    z-index: -1;
+    width: 100%;
+}
+
+.logosPlataf {
+    z-index: 1;
+    height: 75px;
+    margin-top: 0;
+}
+
+.fondoLogP,
+.logosPlataf {
+    position: absolute;
+    top: 0px;
+}
+
+.fondoSega {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+
+}
+
+.divFooter {
+    position: absolute;
+    height: 361px;
+}
+
+.pDeFooter {
+    font-size: 20px;
+    color: white;
+    font-weight: 400;
+    width: 820px;
+    font-style: normal;
+    letter-spacing: 0.11em;
+    line-height: 94.5%;
+}
+
+.cookie1,
+.cookie2 {
+    display: inline-block;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    font-size: 20px;
+    color: white;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 20px;
+    letter-spacing: 0.11em;
+    line-height: 94.5%;
+}
+
+
+.cookie1 a,
+.cookie2 a {
+    margin-right: 8px;
+    color: white;
+}
+
+.redesSociales {
+    position: absolute;
+    top: 410px;
+    left: 0;
+}
+
+/*13) Cerca del footer, animar utilizando un spritesheet un personaje del juego en lanzamiento.*/
+#animacion {
+    position: absolute;
+    top: 8360px;
+    left: 70px;
+    z-index: -3;
+    width: 120px;
+    height: 80px;
+    background: url('images/spider_man1.png') left center;
+    animation: play 2s steps(11) infinite;
+}
+
+@keyframes play {
+    0% {
+        background-position: 0px;
+    }
+
+    100% {
+        background-position: -1468px;
+    }
+}
+
+#animacion:hover {
+    position: absolute;
+    top: 8300px;
+    left: 80px;
+    z-index: -3;
+    width: 200px;
+    height: 120px;
+    background: url('images/spiderNegroHover.png') left center;
+    animation: playHover 2s steps(3) infinite;
+    transform: rotate(-30deg);
+}
+
+@keyframes playHover {
+    0% {
+        background-position: 0px;
+    }
+
+    100% {
+        background-position: -630px;
+    }
+}
+
+/*LOADER*/
+.contenedorLoader {
+    background-image: url(images/Seccion1/cielo2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    transition: all 1.5s;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.logoLoader{
+    position: relative;
+    top: 91px;
+    width: 590px;
+    height: 301px;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    animation: loader 1.5s infinite ease-in-out;
+
+}
+
+.loader {
+    color: #E22B37;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation-delay: -0.16s;
+}
+
+.loader:before,
+.loader:after {
+    content: '';
+    position: absolute;
+    top: 0;
+}
+
+.loader:before {
+    left: -3.5em;
+    animation-delay: -0.32s;
+}
+
+.loader:after {
+    left: 3.5em;
+}
+
+@keyframes loader {
+
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 2.5em 0 -1.3em;
+    }
+
+    40% {
+        box-shadow: 0 2.5em 0 0;
+    }
+}
+
+.loader-inner {
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    animation: loader 5s infinite ease-in-out;
+    position: relative;
+    animation-delay: -0.16s;
+}
+
+.loader-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+@media only screen and (max-width: 1280px) {
+    .personaje3 {
+        display: none;
+    }
+
+    .personaje3Chico {
+        display: flex;
+    }
+}
